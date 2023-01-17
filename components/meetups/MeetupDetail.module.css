@@ -1,0 +1,23 @@
+.detail {
+  text-align: center;
+}
+
+.detail img {
+  width: 100%;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.buttonContainer button {
+  color: #ffffff;
+  background-color: #77002e;
+  border: 0;
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+}
