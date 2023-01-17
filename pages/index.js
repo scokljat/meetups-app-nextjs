@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment } from "react";
 import Head from "next/head";
 import { MongoClient } from "mongodb";
 import MeetupList from "@/components/meetups/MeetupList";
@@ -27,9 +27,7 @@ function Homepage(props) {
 // }
 
 export async function getStaticProps() {
-  const client = await MongoClient.connect(
-    "mongodb+srv://Selma:strijelac@cluster0.bqjklal.mongodb.net/meetups?retryWrites=true&w=majority"
-  );
+  const client = await MongoClient.connect(process.env.CONNECTION_URL);
 
   const db = client.db();
 
