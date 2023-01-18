@@ -14,7 +14,7 @@ function NewMeetupPage() {
     });
 
     const data = await response.json();
-    console.log(data);
+
     router.push("/");
   }
 
@@ -27,7 +27,7 @@ function NewMeetupPage() {
           content="Add yout own meetups and create amazing networking opportunities."
         />
       </Head>
-      <NewMeetupForm onAddMeetup={addMeetupHandler} />
+      <NewMeetupForm meetupHandler={addMeetupHandler} />
     </Fragment>
   );
 }

@@ -23,9 +23,9 @@ function NewMeetupForm(props) {
       description: enteredDescription,
     };
 
-    props.onAddMeetup(meetupData);
+    props.meetupHandler(meetupData);
   }
-  if (props.isEdit) console.log("edit");
+
   return (
     <Card>
       <form className={classes.form} onSubmit={submitHandler}>

@@ -16,10 +16,29 @@ function MeetupDetail(props) {
     router.push("/");
   }
 
+  async function onEditMeetup(value) {
+    const response = await fetch("/api/edit-meetup", {
+      method: "PUT",
+      body: JSON.stringify({
+        id: props.id,
+        title: value.title,
+        image: value.image,
+        address: value.address,
+        description: value.description,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+    router.push("/");
+  }
+
   return (
     <>
       {editIsClicked ? (
-        <NewMeetupForm isEdit={true} setEditIsClicked={setEditIsClicked} />
+        <NewMeetupForm
+          isEdit={true}
+          setEditIsClicked={setEditIsClicked}
+          meetupHandler={onEditMeetup}
+        />
       ) : (
         <section className={classes.detail}>
           <div className={classes.buttonContainer}>
