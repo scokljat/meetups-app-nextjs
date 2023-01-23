@@ -8,14 +8,11 @@ function MeetupDetail(props) {
   const router = useRouter();
 
   async function deleteHandler() {
-    const response = await fetch(
-      `${process.env.CONNECTION_URL}/api/delete-meetup`,
-      {
-        method: "DELETE",
-        body: JSON.stringify({ id: props.id }),
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    const response = await fetch("/api/delete-meetup", {
+      method: "DELETE",
+      body: JSON.stringify({ id: props.id }),
+      headers: { "Content-Type": "application/json" },
+    });
     router.push("/");
   }
 
