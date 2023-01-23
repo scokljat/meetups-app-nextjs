@@ -38,6 +38,12 @@ function MeetupDetail(props) {
           isEdit={true}
           setEditIsClicked={setEditIsClicked}
           meetupHandler={onEditMeetup}
+          currentMeetup={{
+            title: props.title,
+            image: props.image,
+            address: props.address,
+            description: props.description,
+          }}
         />
       ) : (
         <section className={classes.detail}>

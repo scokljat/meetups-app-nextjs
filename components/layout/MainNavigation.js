@@ -4,15 +4,19 @@ import classes from "./MainNavigation.module.css";
 function MainNavigation() {
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>Meetups</div>
       <nav>
         <ul>
-          <li>
-            <Link href="/">All Meetups</Link>
-          </li>
-          <li>
-            <Link href="/new-meetup">Add New Meetup</Link>
-          </li>
+          <Link href="/" style={{ fontSize: "2rem", fontWeight: "bold" }}>
+            Meetups
+          </Link>
+          <div className={classes.pages}>
+            <li>
+              <Link href="/">All Meetups</Link>
+            </li>
+            <li>
+              <Link href="/new-meetup">Add New Meetup</Link>
+            </li>
+          </div>
         </ul>
       </nav>
     </header>

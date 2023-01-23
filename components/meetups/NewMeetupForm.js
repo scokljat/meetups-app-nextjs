@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Card from "../ui/Card";
 import classes from "./NewMeetupForm.module.css";
 
@@ -31,15 +31,33 @@ function NewMeetupForm(props) {
       <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes.control}>
           <label htmlFor="title">Meetup Title</label>
-          <input type="text" required id="title" ref={titleInputRef} />
+          <input
+            type="text"
+            required
+            id="title"
+            ref={titleInputRef}
+            defaultValue={props.isEdit && props.currentMeetup.title}
+          />
         </div>
         <div className={classes.control}>
           <label htmlFor="image">Meetup Image</label>
-          <input type="url" required id="image" ref={imageInputRef} />
+          <input
+            type="url"
+            required
+            id="image"
+            ref={imageInputRef}
+            defaultValue={props.isEdit && props.currentMeetup.image}
+          />
         </div>
         <div className={classes.control}>
           <label htmlFor="address">Address</label>
-          <input type="text" required id="address" ref={addressInputRef} />
+          <input
+            type="text"
+            required
+            id="address"
+            ref={addressInputRef}
+            defaultValue={props.isEdit && props.currentMeetup.address}
+          />
         </div>
         <div className={classes.control}>
           <label htmlFor="description">Description</label>
@@ -48,6 +66,7 @@ function NewMeetupForm(props) {
             required
             rows="5"
             ref={descriptionInputRef}
+            defaultValue={props.isEdit && props.currentMeetup.description}
           ></textarea>
         </div>
         <div className={classes.actions}>
